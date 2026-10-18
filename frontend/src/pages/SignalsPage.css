@@ -1,0 +1,24 @@
+/* Signals page: filter bar + paginated disproportionality table. */
+
+.signals__filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(140px, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+
+@media (max-width: 1000px) {
+  .signals__filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.signals__count {
+  font-size: 12px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.signals__count strong {
+  color: var(--text);
+}

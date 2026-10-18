@@ -1,0 +1,18 @@
+/* Reviews page: sentiment stats table + rating & ADR-term charts. */
+
+.reviews__chart-box {
+  height: 380px;
+}
+
+.reviews__chart-box--terms {
+  height: 640px;
+}
+
+.reviews__terms-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  white-space: normal;
+  min-width: 240px;
+  max-width: 420px;
+}

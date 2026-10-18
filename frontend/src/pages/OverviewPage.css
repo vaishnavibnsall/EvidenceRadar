@@ -1,0 +1,59 @@
+/* Overview page layout: KPI grid, trend + top-drug charts, tables, scatter. */
+
+.chart-box {
+  height: 300px;
+  width: 100%;
+}
+
+.chart-box--tall {
+  height: 360px;
+}
+
+.chart-box--scatter {
+  height: 380px;
+}
+
+.chart-tooltip {
+  background: rgba(13, 21, 38, 0.96);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 12px;
+  color: var(--text);
+  box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.9);
+}
+
+.chart-tooltip__title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.chart-tooltip__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--text-dim);
+}
+
+.chart-tooltip__row strong {
+  color: var(--text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.overview__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.overview__section-note {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.overview__section-note--spaced {
+  margin-top: 10px;
+}
