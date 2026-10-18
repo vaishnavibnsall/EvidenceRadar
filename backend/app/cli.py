@@ -128,7 +128,7 @@ def cmd_sample(args) -> None:
             SELECT c.case_id, c.version, c.receive_date, c.event_date, c.reporter_country,
                    c.patient_age, c.patient_sex, c.weight_kg,
                    cd.drug_name, cd.drug_normalized, cd.role_codename, cd.route,
-                   r.pt AS reaction_pt
+                   r.pt AS pt
             FROM faers_cases c
             LEFT JOIN faers_case_drugs cd ON cd.case_id=c.case_id AND cd.version=c.version
             LEFT JOIN faers_reactions r ON r.case_id=c.case_id AND r.version=c.version
@@ -137,7 +137,7 @@ def cmd_sample(args) -> None:
             conn, params=cases,
         )
         # collapse the drug x reaction cross product back to one row per pair
-        faers = faers.drop_duplicates(subset=["case_id", "version", "drug_name", "reaction_pt"])
+        faers = faers.drop_duplicates(subset=["case_id", "version", "drug_name", "pt"])
         faers.to_csv(config.SAMPLE_DIR / "sample_faers.csv", index=False)
 
         trials = pd.read_sql(
