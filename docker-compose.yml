@@ -1,0 +1,10 @@
+services:
+  evidenceradar:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./backend/evidenceradar.db:/app/backend/evidenceradar.db
+    environment:
+      - EVIDENCERADAR_DB=/app/backend/evidenceradar.db
